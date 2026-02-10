@@ -25,3 +25,8 @@ jobs:
       - name: Train ML Model
         run: |
           python train.py
+
+      - name: Start API
+        run: |
+          uvicorn app:app --host 127.0.0.1 --port 8000 &
+          sleep 10
